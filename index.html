@@ -1,0 +1,40 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leitor de Texto</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#36bb72">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Leitor de Texto</h1>
+
+        <textarea id="text" cols="30" rows="10" placeholder="Insire o texto para ler..."></textarea>
+
+        <button id="btn">Falar</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js")
+                .then(() => {
+                    console.log("Service Worker registrado com sucesso!");
+                })
+                .catch(error => {
+                    console.log("Erro ao registrar o Service Worker:", error);
+                });
+        }
+    </script>
+</body>
+</html>
+```
